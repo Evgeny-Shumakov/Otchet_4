@@ -1,0 +1,234 @@
+###############################################################################
+#
+# IAR ELF Linker V8.20.2.14835/W32 for ARM                07/Dec/2019  11:18:03
+# Copyright 2007-2017 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\Студент-06\Documents\stm32Labs-master\Lab4Empty\Debug\Exe\lab4.out
+#    Map file     =  
+#        C:\Users\Студент-06\Documents\stm32Labs-master\Lab4Empty\Debug\List\lab4.map
+#    Command line =  
+#        -f C:\Users\-06~1\AppData\Local\Temp\EWA818.tmp
+#        (C:\Users\Студент-06\Documents\stm32Labs-master\Lab4Empty\Debug\Obj\main.o
+#        C:\Users\Студент-06\Documents\stm32Labs-master\Lab4Empty\Debug\Obj\startup.o
+#        -o
+#        C:\Users\Студент-06\Documents\stm32Labs-master\Lab4Empty\Debug\Exe\lab4.out
+#        --map
+#        C:\Users\Студент-06\Documents\stm32Labs-master\Lab4Empty\Debug\List\lab4.map
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.0_3\arm\config\linker\ST\stm32f411xE.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor        = *
+__CPP_Exceptions = Disabled
+__CPP_Language   = C++14
+__SystemLibrary  = DLib
+__dlib_version   = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x08000000 { ro section .intvec };
+"P1":  place in [from 0x08000000 to 0x0807ffff] { ro };
+define block CSTACK with size = 8K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x20000000 to 0x2001ffff] {
+          rw, block CSTACK, block HEAP };
+
+No sections matched the following patterns:
+
+  rw  in "P2"
+
+
+  Section   Kind        Address    Size  Object
+  -------   ----        -------    ----  ------
+"A0":                             0x10c
+  .intvec   const    0x08000000   0x10c  startup.o [1]
+                   - 0x0800010c   0x10c
+
+"P1":                             0x268
+  .text     ro code  0x0800010c    0x50  main.o [1]
+  .text     ro code  0x0800015c    0x18  main.o [1]
+  .text     ro code  0x08000174    0x10  main.o [1]
+  .text     ro code  0x08000184    0x14  main.o [1]
+  .text     ro code  0x08000198    0x18  main.o [1]
+  .text     ro code  0x080001b0    0x18  main.o [1]
+  .text     ro code  0x080001c8    0x18  main.o [1]
+  .text     ro code  0x080001e0    0x18  main.o [1]
+  .text     ro code  0x080001f8     0xc  main.o [1]
+  .text     ro code  0x08000204     0xc  main.o [1]
+  .text     ro code  0x08000210     0xc  main.o [1]
+  .text     ro code  0x0800021c    0x18  main.o [1]
+  .text     ro code  0x08000234    0x18  main.o [1]
+  .text     ro code  0x0800024c    0x18  main.o [1]
+  .text     ro code  0x08000264    0x22  fpinit_M.o [4]
+  .text     ro code  0x08000286     0x2  startup.o [1]
+  .text     ro code  0x08000288    0x1e  cmain.o [5]
+  .text     ro code  0x080002a6     0x4  exit.o [3]
+  .rodata   const    0x080002aa     0x1  unwind_debug.o [6]
+  .text     ro code  0x080002ac     0xa  cexit.o [5]
+  .text     ro code  0x080002b8    0x14  exit.o [6]
+  .text     ro code  0x080002cc    0x18  startup.o [1]
+  .text     ro code  0x080002e4    0x10  startup.o [1]
+  .text     ro code  0x080002f4    0x14  startup.o [1]
+  .text     ro code  0x08000308    0x10  startup.o [1]
+  .text     ro code  0x08000318    0x16  startup.o [1]
+  .text     ro code  0x08000330    0x10  startup.o [1]
+  .text     ro code  0x08000340    0x14  startup.o [1]
+  .text     ro code  0x08000354    0x10  startup.o [1]
+  .text     ro code  0x08000364    0x10  startup.o [1]
+                   - 0x08000374   0x268
+
+"P2":                            0x2000
+  CSTACK             0x20000000  0x2000  <Block>
+    CSTACK  uninit   0x20000000  0x2000  <Block tail>
+                   - 0x20002000  0x2000
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module          ro code  ro data  rw data
+    ------          -------  -------  -------
+C:\Users\Студент-06\Documents\stm32Labs-master\Lab4Empty\Debug\Obj: [1]
+    main.o              344
+    startup.o           168      268
+    -----------------------------------------
+    Total:              512      268
+
+command line: [2]
+    -----------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                4
+    -----------------------------------------
+    Total:                4
+
+m7M_tls.a: [4]
+    fpinit_M.o           34
+    -----------------------------------------
+    Total:               34
+
+rt7M_tl.a: [5]
+    cexit.o              10
+    cmain.o              30
+    -----------------------------------------
+    Total:               40
+
+shb_l.a: [6]
+    exit.o               20
+    unwind_debug.o                 1
+    -----------------------------------------
+    Total:               20        1
+
+    Gaps                  5
+    Linker created                      8 192
+---------------------------------------------
+    Grand Total:        615      269    8 192
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+?main                   0x08000289         Code  Gb  cmain.o [5]
+CSTACK$$Base            0x20000000          --   Gb  - Linker created -
+CSTACK$$Limit           0x20002000          --   Gb  - Linker created -
+InterruptHandler::DummyHandler()
+                        0x08000287    0x2  Code  Gb  startup.o [1]
+InterruptHandler::Timer2Handler()
+                        0x080002cd   0x18  Code  Gb  startup.o [1]
+InterruptHandler::Timer5Handler()
+                        0x08000319   0x16  Code  Gb  startup.o [1]
+Region$$Table$$Base     0x00000000          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00000000          --   Gb  - Linker created -
+__cmain                 0x08000289         Code  Gb  cmain.o [5]
+__exit                  0x080002b9   0x14  Code  Gb  exit.o [6]
+__iar_debug_exceptions  0x080002aa    0x1  Data  Gb  unwind_debug.o [6]
+__iar_init_vfp          0x08000265         Code  Gb  fpinit_M.o [4]
+__iar_program_start     0x08000365   0x10  Code  Gb  startup.o [1]
+__iar_systems$$module {Abs}
+                        0x00000001         Data  Gb  command line/config [2]
+__low_level_init        0x0800010d   0x4e  Code  Gb  main.o [1]
+__vector_table          0x08000000  0x10c  Data  Lc  startup.o [1]
+_call_main              0x08000295         Code  Gb  cmain.o [5]
+_exit                   0x080002ad         Code  Gb  cexit.o [5]
+_main                   0x080002a3         Code  Gb  cmain.o [5]
+bool FieldValueBase<RCC_CFGR_SWS_Values<RCC::CFGR, (unsigned int)2, (unsigned int)2, ReadMode, RCC::RCCCFGRBase>, RCC::RCCCFGRBase, (unsigned int)0>::IsSet<ReadMode, void>()
+                        0x08000199   0x18  Code  Gb  main.o [1]
+bool FieldValueBase<RCC_CR_HSIRDY_Values<RCC::CR, (unsigned int)1, (unsigned int)1, ReadMode, RCC::RCCCRBase>, RCC::RCCCRBase, (unsigned int)1>::IsSet<ReadMode, void>()
+                        0x08000175   0x10  Code  Gb  main.o [1]
+bool FieldValueBase<TIM2_SR_UIF_Values<TIM2::SR, (unsigned int)0, (unsigned int)1, ReadWriteMode, TIM2::TIM2SRBase>, TIM2::TIM2SRBase, (unsigned int)1>::IsSet<ReadWriteMode, void>()
+                        0x080002e5   0x10  Code  Gb  startup.o [1]
+bool FieldValueBase<TIM5_SR_UIF_Values<TIM5::SR, (unsigned int)0, (unsigned int)1, ReadWriteMode, TIM5::TIM5SRBase>, TIM5::TIM5SRBase, (unsigned int)1>::IsSet<ReadWriteMode, void>()
+                        0x08000331   0x10  Code  Gb  startup.o [1]
+exit                    0x080002a7    0x4  Code  Gb  exit.o [3]
+main                    0x0800015b    0x2  Code  Gb  main.o [1]
+void FieldValueBase<GPIOA_MODER_MODER5_Values<GPIOA::MODER, (unsigned int)10, (unsigned int)2, ReadWriteMode, GPIOA::GPIOAMODERBase>, GPIOA::GPIOAMODERBase, (unsigned int)1>::Set<ReadWriteMode, void>()
+                        0x080001e1   0x18  Code  Gb  main.o [1]
+void FieldValueBase<RCC_AHB1ENR_DMA2EN_Values<RCC::AHB1ENR, (unsigned int)0, (unsigned int)1, ReadWriteMode, RCC::RCCAHB1ENRBase>, RCC::RCCAHB1ENRBase, (unsigned int)1>::Set<ReadWriteMode, void>()
+                        0x080001c9   0x18  Code  Gb  main.o [1]
+void FieldValueBase<RCC_APB1ENR_TIM5EN_Values<RCC::APB1ENR, (unsigned int)3, (unsigned int)1, ReadWriteMode, RCC::RCCAPB1ENRBase>, RCC::RCCAPB1ENRBase, (unsigned int)1>::Set<ReadWriteMode, void>()
+                        0x080001b1   0x18  Code  Gb  main.o [1]
+void FieldValueBase<RCC_CFGR_SW_Values<RCC::CFGR, (unsigned int)0, (unsigned int)2, ReadWriteMode, RCC::RCCCFGRBase>, RCC::RCCCFGRBase, (unsigned int)0>::Set<ReadWriteMode, void>()
+                        0x08000185   0x14  Code  Gb  main.o [1]
+void FieldValueBase<RCC_CR_HSION_Values<RCC::CR, (unsigned int)0, (unsigned int)1, ReadWriteMode, RCC::RCCCRBase>, RCC::RCCCRBase, (unsigned int)1>::Set<ReadWriteMode, void>()
+                        0x0800015d   0x18  Code  Gb  main.o [1]
+void FieldValueBase<TIM2_SR_UIF_Values<TIM2::SR, (unsigned int)0, (unsigned int)1, ReadWriteMode, TIM2::TIM2SRBase>, TIM2::TIM2SRBase, (unsigned int)0>::Set<ReadWriteMode, void>()
+                        0x080002f5   0x14  Code  Gb  startup.o [1]
+void FieldValueBase<TIM5_CR1_CEN_Values<TIM5::CR1, (unsigned int)0, (unsigned int)1, ReadWriteMode, TIM5::TIM5CR1Base>, TIM5::TIM5CR1Base, (unsigned int)1>::Set<ReadWriteMode, void>()
+                        0x0800024d   0x18  Code  Gb  main.o [1]
+void FieldValueBase<TIM5_CR1_URS_Values<TIM5::CR1, (unsigned int)2, (unsigned int)1, ReadWriteMode, TIM5::TIM5CR1Base>, TIM5::TIM5CR1Base, (unsigned int)1>::Set<ReadWriteMode, void>()
+                        0x0800021d   0x18  Code  Gb  main.o [1]
+void FieldValueBase<TIM5_DIER_UIE_Values<TIM5::DIER, (unsigned int)0, (unsigned int)1, ReadWriteMode, TIM5::TIM5DIERBase>, TIM5::TIM5DIERBase, (unsigned int)1>::Set<ReadWriteMode, void>()
+                        0x08000235   0x18  Code  Gb  main.o [1]
+void FieldValueBase<TIM5_SR_UIF_Values<TIM5::SR, (unsigned int)0, (unsigned int)1, ReadWriteMode, TIM5::TIM5SRBase>, TIM5::TIM5SRBase, (unsigned int)0>::Set<ReadWriteMode, void>()
+                        0x08000341   0x14  Code  Gb  startup.o [1]
+void RegisterBase<(unsigned int)1073744936, (unsigned int)32, ReadWriteMode>::Write<ReadWriteMode, void>(unsigned int)
+                        0x080001f9    0xc  Code  Gb  main.o [1]
+void RegisterBase<(unsigned int)1073744940, (unsigned int)32, ReadWriteMode>::Write<ReadWriteMode, void>(unsigned int)
+                        0x08000205    0xc  Code  Gb  main.o [1]
+void RegisterBase<(unsigned int)1073872916, (unsigned int)32, ReadWriteMode>::Toggle<ReadWriteMode, void>(unsigned int)
+                        0x08000355   0x10  Code  Gb  startup.o [1]
+void RegisterBase<(unsigned int)1073874964, (unsigned int)32, ReadWriteMode>::Toggle<ReadWriteMode, void>(unsigned int)
+                        0x08000309   0x10  Code  Gb  startup.o [1]
+void RegisterBase<(unsigned int)3758153988, (unsigned int)32, ReadWriteMode>::Write<ReadWriteMode, void>(unsigned int)
+                        0x08000211    0xc  Code  Gb  main.o [1]
+
+
+[1] = C:\Users\Студент-06\Documents\stm32Labs-master\Lab4Empty\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+    615 bytes of readonly  code memory
+    269 bytes of readonly  data memory
+  8 192 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

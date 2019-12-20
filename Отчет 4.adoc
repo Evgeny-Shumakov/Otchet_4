@@ -1,0 +1,113 @@
+:imagesdir: YEP 
+== Отчет по работе №4
+Необходимо создать проект. Для этого было необходимо:
+
+* Выбрать соотвтетствующее устройство,в нашем случае STM32F411RE.
+
+* После произвести дополнительные настройки выбрав язык программирования C++, также добавить все папки проекта,как это делали ранее в лаборатотных работах. (Подключали AbstractHardware, Common, Register и другие...)
+
+Далее подключаем библиотеки, настраиваем внутреннюю частоту
+[source,]
+----
+//#include <cstdint>            //for int types such as uint32_t
+#include "gpioaregisters.hpp" //for Gpioa
+#include "rccregisters.hpp"   //for RCC
+#include "tim2registers.hpp"   //for SPI2
+#include "nvicregisters.hpp"  //for NVIC
+#include "tim5registers.hpp" //For TIM5
+// БИБЛИОТЕКИ
+----
+
+[source,]
+----
+extern "C"
+{
+int __low_level_init(void)
+{
+  //3
+  RCC::CR::HSION::On::Set(); 
+  while(!RCC::CR::HSIRDY::Ready::IsSet());
+  {
+  }
+  RCC::CFGR::SW::Hsi::Set();
+  while(!RCC::CFGR::SWS::Hsi::IsSet());
+  {
+  }
+  // ПОДКЛЮЧЕНИЕ ВНУТРЕННЕЙ ЧАСТОТЫ
+----
+
+Осуществим подключение таймера. По заданию это TIM5
+[source,]
+----
+//4
+  RCC::APB1ENR::TIM5EN::Enable::Set()
+----
+
+Пятый и шестой пункт:  подключение портов и назначение как выходов.
+[source,]
+----
+//5
+  RCC::AHB1ENR::GPIOAEN::Enable::Set();
+//6
+  GPIOA::MODER::MODER5::Output::Set();
+----
+
+Далее  в таблице векторов прерываний нужно записать адреса обработчиков для каждого вектора до адреса вектора TIM5 
+
+[#image-tabl1]
+.Таблица векторов прерывания
+image::tabl1.png[]
+
+[#image-tabl2]
+.Результат записи через startup.cpp
+image::tabl2.png[]
+
+
+Следующим заданием было моргание светодиода с заданной частотой
+Внутренняя частота составляет 16 Мгц. Осуществляли с помощью PSC. Данный бит имееет особенность в том,что он к частоте прибавляет +1. Поэтому в коде использовали частоту на единицу меньше.
+[source,]
+----
+  TIM5::PSC::Write(15999);
+  TIM5::ARR::Write(2000)
+----
+[.green.background.]
+Если я не ошибаюсь,то светодиод согласно программе моргает раз в 2 секунды.
+
+В пункте 9 подключаем NVIC (Nested vectored interrupt controller) (Вложенный векторный контроллер прерываний), и ISER1.
+[source,]
+----
+ NVIC::ISER1::Write(1 << 18)
+----
+
+ Реализация переключения через Toggle.
+ 
+[source,]
+----
+template <typename Port, std::uint32_t pinNum>
+struct Led //Realizacia perecluchenia cherez Toggle
+{
+  static void Toggle()
+  {
+    Port::ODR::Toggle(1<<pinNum);
+  }
+};
+
+int main()
+{
+  for(;;)
+  {
+  }
+  
+  return 0 ;
+}
+----
+[.blue.background.]
+По ошибкам я не вспомню. Точно знаю,что были ошибки в записи вектров прерывания. А также проблемы с морганием свтодиода.
+
+P.S понравилась картиночка.
+
+[#image-mem]
+.Мем смешной,ситуация страшная
+image::mem.png[]
+
+

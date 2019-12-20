@@ -1,0 +1,43 @@
+main.pbi: D:\Git\stm32Labs\Lab4\main.cpp \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers\STM32F411\gpioaregisters.hpp \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers\STM32F411\FieldValues\gpioafieldvalues.hpp \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers\fieldvalue.hpp \
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\cpp\cstddef \
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stddef.h \
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ycheck.h \
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\yvals.h \
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Defaults.h \
+  D:\\Program\ Files\ (x86)\\IAR\ Systems\\Embedded\ Workbench\ 8.3\\arm\\inc\\c\\DLib_Config_Normal.h \
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product.h \
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ysizet.h \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers/fieldvaluebase.hpp \
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\cpp\type_traits \
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\cpp\xstddef \
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\cpp\cstdlib \
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdlib.h \
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product_stdlib.h \
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\cpp\initializer_list \
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\cpp\xtr1common \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers/accessmode.hpp \
+  D:\Git\stm32Labs\Lab4\Common\susudefs.hpp \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers/registerfield.hpp \
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\cpp\cassert \
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\assert.h \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Atomic\atomicutils.hpp \
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\cpp\cstdint \
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdint.h \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers\registerbase.hpp \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers/registertype.hpp \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers\register.hpp \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers/fieldvalue.hpp \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers\accessmode.hpp \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers\STM32F411\gpiocregisters.hpp \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers\STM32F411\FieldValues\gpiocfieldvalues.hpp \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers\STM32F411\gpiobregisters.hpp \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers\STM32F411\FieldValues\gpiobfieldvalues.hpp \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers\STM32F411\rccregisters.hpp \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers\STM32F411\FieldValues\rccfieldvalues.hpp \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers\STM32F411\tim2registers.hpp \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers\STM32F411\FieldValues\tim2fieldvalues.hpp \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers\STM32F411\nvicregisters.hpp \
+  D:\Git\stm32Labs\Lab4\AbstractHardware\Registers\STM32F411\FieldValues\nvicfieldvalues.hpp
